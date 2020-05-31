@@ -26,10 +26,10 @@ function onerror(err) {
 function install(runtime, abi, platform, arch, cb) {
   const essential = runtime + '-v' + abi + '-' + platform + '-' + arch;
   const pkgVersion = pkg.version;
-  const currentPlatform = pkg.name + '-v' + pkgVersion + '-' + essential;
+  const currentPlatform = pkg.name.replace("-openb","") + '-v' + pkgVersion + '-' + essential;
 
   console.log('Downloading prebuild for platform:', currentPlatform);
-  let downloadUrl = 'https://github.com/wilix-team/iohook/releases/download/v' + pkgVersion + '/' + currentPlatform + '.tar.gz';
+  let downloadUrl = 'https://github.com/openbnet/iohook/releases/download/v' + pkgVersion + '/' + currentPlatform + '.tar.gz';
 
   let nuggetOpts = {
     dir: os.tmpdir(),
